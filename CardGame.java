@@ -65,6 +65,22 @@ public class CardGame {
 
 	}//end main
 
+	public enum Suit {
+		HEARTS, DIAMONDS, CLUBS, SPADES
+	}
+
+	public enum Rank {
+		TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
+	}
+
+	public class Card {
+		private Suit cardSuit;
+		private Rank cardName;
+		private int cardValue;
+		private String cardPic;
+
+	}
+
 	public static void shuffleDeck() {
 		Collections.shuffle(cardList);
 }
