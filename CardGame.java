@@ -8,6 +8,7 @@ import java.io.IOException;
 //import java.util.ArrayList;
 //import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 
 
 
@@ -63,5 +64,18 @@ public class CardGame {
 		cardList.displayList();
 
 	}//end main
+
+	public static void shuffleDeck() {
+		Collections.shuffle(cardList);
+}
+
+	public static List<Card> dealCards(int numberOfCards) {
+		List<Card> hand = new ArrayList<>();
+		for (int i = 0; i < numberOfCards; i++) {
+			hand.add(cardList.removeFirst());
+		}
+
+		return hand;
+	}
 
 }//end class
