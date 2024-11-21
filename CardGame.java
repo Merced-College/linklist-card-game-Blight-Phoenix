@@ -94,4 +94,16 @@ public class CardGame {
 		return hand;
 	}
 
+	public static void saveGame(Sring filename) throws IOException {
+		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
+			out.writeObject(cardList);
+		}
+	}
+
+	public static void loadGame(String filename) throws IOException, ClassNotFoundException {
+		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename))) {
+			cardList = (LinkedList<Card>) in.readObject();
+		}
+	}
+
 }//end class
